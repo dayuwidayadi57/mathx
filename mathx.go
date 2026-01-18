@@ -57,3 +57,20 @@ func Range(start, end, step int) []int {
     }
     return res
 }
+
+func Clamp[T Number](val, min, max T) T {
+	if val < min {
+		return min
+	}
+	if val > max {
+		return max
+	}
+	return val
+}
+
+func Abs[T Number](val T) T {
+	if val < 0 {
+		return -val
+	}
+	return val
+}
