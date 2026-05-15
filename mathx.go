@@ -73,3 +73,28 @@ func Abs[T Number](val T) T {
 	}
 	return val
 }
+
+func Median[T Number](nums []T) float64 {
+	n := len(nums)
+	if n == 0 {
+		return 0
+	}
+
+	// Copy slice agar tidak mengubah data asli
+	sorted := make([]T, n)
+	copy(sorted, nums)
+
+	// Simple sort
+	for i := 0; i < n; i++ {
+		for j := i + 1; j < n; j++ {
+			if sorted[j] < sorted[i] {
+				sorted[i], sorted[j] = sorted[j], sorted[i]
+			}
+		}
+	}
+
+	if n%2 == 1 {
+		return float64(sorted[n/2])
+	}
+	return (float64(sorted[n/2-1]) + float64(sorted[n/2])) / 2
+}

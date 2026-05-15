@@ -19,3 +19,7 @@ import "[github.com/dayuwidayadi57/mathx](https://github.com/dayuwidayadi57/math
 result := mathx.Max(10, 20)          // returns 20 (int)
 avg := mathx.Average([]int{1, 2, 3}) // returns 2.0 (float64)
 rounded := mathx.RoundTo(3.1415, 2)  // returns 3.14 (float64)
+
+// Median - find the middle value of a slice
+median := mathx.Median([]int{3, 1, 4, 1, 5})  // returns 3.0
+median2 := mathx.Median([]int{1, 2, 3, 4})     // returns 2.5 (even length)
